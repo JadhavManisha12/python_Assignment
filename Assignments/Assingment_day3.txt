@@ -1,0 +1,66 @@
+1) write a function to accept a number and return its square using
+	a) normal function
+	b) lambda
+
+def accept(no):
+    return no*no
+
+n=int(input("ENter any number "))
+no=accept(n)
+print("Square of number is= ",no)
+
+
+print ("using lambda")
+
+(lambda x:print(x*x))(n)
+
+
+2) write a function to display "Hello World" using
+	a) normal function
+	b) lambda
+
+
+def accept(msg):
+    print(msg)
+
+msg=(input("ENter any word"))
+accept(msg)
+
+
+print ("using lambda")
+
+(lambda :print("manisha"))()
+
+
+3) write a function with 2 arguments , second argument should be "default argument" and display them. Using
+	a) normal function 
+	b) lambda
+
+def accept(n,no=5):
+    print("value is",n,no)
+
+n=int(input("Enter any number "))
+accept(n)
+
+print("uisng lambda")
+
+(lambda x,x1=10:print("value of lambda is",x,x1))(100)
+
+
+
+4) write a function with variable no. of arguments and display them. Using
+	a) normal function
+	b) lambda
+
+
+def accept(*vargs):
+    print("all msg is",vargs)
+
+accept('A',"mansiha",90.7)
+
+(lambda *vargs:print(vargs))("manisha",23,90.9)
+
+
+
+
+

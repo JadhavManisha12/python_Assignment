@@ -1,0 +1,78 @@
+1) define a class Sample with
+	data as instance member
+	init which takes one parameter in order to initialize "data"
+
+make sure following things are possible
+
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+s5=s4-s1+s3*s2
+
+print(s5)   #  ans should be  45
+
+
+
+
+class Sample:
+    def __init__(self, data):
+        self.data = data
+        
+    def __add__(self, object):
+        return self.data + object.data
+    
+    def __sub__(self, object):
+        return self.data - object.data
+    
+    def __mul__(self, object):
+        return self.data * object.data
+    
+    #def __str__(self):
+     #   return str(self.data)
+
+s1 = Sample(7)
+s2 = Sample(5)
+s3 = Sample(8)
+s4 = Sample(12)
+
+s5 = s4 - s1 + s3 * s2
+
+print(s5)
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Exceptionn
+#for this program you have to set pythonpath till parent package 
+
+class VotingNotAllowedException(Exception):
+    pass
+
+from mypkg.voting import VotingNotAllowedException
+class voter:
+    def __init__(self,name,age):
+       self.name=name
+       self.age=age
+       
+       if(age<18):
+           raise VotingNotAllowedException("not allowed for voting")
+       
+    def disp(self):
+           print("allowed for voting",self.age,self.name)
+
+try:        
+    t1=voter("manisha",21)
+    t1.disp()
+except VotingNotAllowedException:
+    print("not allowed for voting")
+    
+   
+
+        
+
+
+
+
+

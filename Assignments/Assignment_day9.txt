@@ -1,0 +1,179 @@
+1) store marks of 5 subjects
+	here use marks as actual data and subject names as indexes.
+accept both marks and subjects from the user.
+
+
+import pandas as pd
+index=[]
+print("ENter your 5 subject")
+for i in range(0,5):
+    n1=(input())
+    index.append(n1)
+    
+print(index)
+
+marks=[]
+print("ENter your  marks")
+for i in range(0,5):
+    n2=int(input())
+    marks.append(n2)
+    
+print(marks)
+
+f=pd.Series(marks,index=[index])
+print(f)
+    
+
+2) create dictionary to store player name and runs scored of at least 5 players. Display it. Now convert this dictionary ‌into Series object and print it.
+
+import pandas as pd    
+mydict=({"player":["manisha","mansi","adi","raj","shu"],"runs":[400,500,600,300,200]})
+print(mydict)
+
+my=pd.Series(mydict)
+print(my)
+
+my1=pd.DataFrame(mydict)
+print(my1)
+
+
+3) accept 10 values and store them in the Series. Now perform following operations:
+
+a) display the entire Series
+b) extract 3rd element
+c) extract elements from 4 to 7
+d) extract elements from fourth last till the last element
+e) extract first 3 elements
+f) extract elements from the 5th position
+
+from pandas import *
+mylist=[]
+print("ENter 10 elements in the list")
+for i in range(0,10):
+    n=int(input())
+    mylist.append(n)
+
+print(mylist)
+
+my=Series(mylist)
+print("using series entire series",my)
+
+print("extract 3rd elements",my[2])
+print("extract elements from 4 to 7",my.iloc[4:8].to_string(index=False))
+print("extract elements from fourth last till the last element",my.iloc[-4:].to_string(index=False))
+
+print("*****")
+#print(my.iloc[-4:, -1])
+print("******")
+
+print("extract first 3 elements",my.iloc[0:3].to_string(index=False))
+print("******")
+print("elements from the 5th position",my[5:])
+
+
+4) accept 5 values in a Series and perform the following operations:
+	a) display their sum
+	b) add the value accepted from the user
+	c) subtract the value accepted from the user
+	d) multiply the value accepted from the user
+	e) add the value accepted from the user
+
+
+import pandas as np
+
+mylist=[]
+print("accept five elements")
+for i in range(0,5):
+    n=int(input())
+    mylist.append(n)
+    
+print(mylist)
+my=np.Series(mylist)
+n1=int(input("enter any value you have perfrom op"))
+print("sum=",sum(my))
+print(my.add(n1))
+print("sub",my.subtract(n1))
+print("mul",my.mul(n1))
+
+**********  DataFrame Assignments ************************************
+
+5) accept 5 names,designations and salaries and display them with DataFrame.
+
+import pandas as pd
+name=[]
+print("Enter five names")
+for i in range(0,5):
+    n=input()
+    name.append(n)
+print(name)
+
+desi=[]
+print("Enter five designations")
+for i in range(0,5):
+    d=input()
+    desi.append(d)
+print(desi)
+
+sal=[]
+print("Enter five designations")
+for i in range(0,5):
+    s=int(input())
+    sal.append(s)
+print(sal)
+
+
+my={"name":name,"designamtion":desi,"salari":sal}
+print(my)
+
+my1=pd.DataFrame(my)
+print(my1)
+
+6) create a csv file (with whatever columns and rows you want) manually and then read using pandas.
+
+import pandas as pd
+list1=["manisha","eshwar","jadhav"]
+list2=[100,2000,300]
+my=pd.Series(list1,list2)
+#print(my)
+
+my.to_csv("C:\\Users\\Owner\\OneDrive\\Desktop\\python_pratice\\manisha.csv")
+
+read=pd.read_csv()
+
+red=pd.read_csv("C:\\Users\\Owner\\OneDrive\\Desktop\\python_pratice\\manisha.csv")
+print(red)
+
+f=open("C:\\Users\\Owner\\OneDrive\\Desktop\\python_pratice\\manisha.csv")
+for i in f:
+    print(i)
+
+
+7) create "Vita.xlsx" using pandas. In this Excel file you have to create 2 sheets "DBDA", and "DAC". 
+in each sheet you have to write name,address and age of all the team leaders.
+make sure Excel file gets created successfully.
+
+import pandas as pd
+DBDA={"name":["manisha","mansi","uma"],"add":["pune","delhi","nashil"],"age":[10,20,80]}
+DAC={"name":["raghv","adity","divyani"],"add":["pune","delhi","nashil"],"age":[10,20,80]}
+
+my1=pd.DataFrame(DBDA)
+print(my1)
+print("\n\n")
+my2=pd.DataFrame(DBDA)
+print(my2)
+
+with pd.ExcelWriter("record.xlsx") as mywriter:
+    my1.to_excel(mywriter,sheet_name='DBDA',index=False)
+    my2.to_excel(mywriter,sheet_name='DAC',index=False)
+
+
+
+
+
+
+
+
+
+
+
+    

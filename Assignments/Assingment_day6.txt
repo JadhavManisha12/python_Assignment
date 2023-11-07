@@ -1,0 +1,126 @@
+1) Create a multi-level inheritance , override default constructors in the child classes , instantiate the child class and show how will u invoke parent class constructor from child class ?
+
+class base:
+    def __init__(self):
+        print("init method of base class")
+        
+class sub(base):
+    def __init__(self):
+        super() .__init__()
+        print("init method of sub class")
+        
+        
+class sub1(sub):
+    def __init__(self):
+        super() .__init__()
+        print("init method of sub1 class")
+        
+c1=sub1()
+print(id(c1))
+
+
+2) create a class "Vehicle", define a method "public void start()" in it. From this class derive a class FourWheeler. How will u override "start()" method of parent class ?
+
+class vehical:
+    def start(self):
+        print("strat the vehical")
+        
+        
+class fourwheeler(vehical):
+    def start(self):
+        print("start method of fourwheller")
+        
+t1=fourwheeler()
+t1.start()
+
+
+
+3) Go for Hierarchical inheritance, create instances of child class and observe constructor invocation.
+
+class A:
+    def __init__(self):
+        print("class A")
+        
+    def disp1(self):
+        print("disp1")
+        
+class B(A):
+    def __init__(self):
+        print("class B")
+    def disp2(self):
+        super().disp1()
+        print("disp2")
+        
+class C(A):
+    def __init__(self):
+        print("class c")
+    def disp3(self):
+        super().disp1()
+        print("disp3")
+        
+t1=B()
+t1.disp2()
+t2=C()
+t2.disp3()
+
+4) Create a class "Top1" with "disp1()" method.
+From this class Derive "Bottom1", "Bottom2" and "Bottom3" classes ,override the "disp1()".
+create a function "perform" which can take argument as object of any child class.
+Now show how will u achieve dynamic polymorphism.
+
+           
+ class Top1:
+    def disp(self):
+        print("display method of top1")
+        
+class Bottom1(Top1):
+    def disp(self):
+        print("display method of Bottom1")
+        
+class Bottom2(Top1):
+    def disp(self):
+        print("display method of Bottom2")
+        
+class Bottom3(Top1):
+    def disp(self):
+        print("display method of Bottom3")
+
+def perform(ref):
+    ref.disp()
+    
+t1=Bottom1()
+perform(t1)
+t1=Bottom2()
+perform(t1)
+t3=Bottom3()
+perform(t1)
+
+
+
+5) create Base class and Sub class with parameterized constructors. Show how will you invoke Base class parameterized constructor from Sub class.
+
+
+class base:
+    def __init__(self,a,d):
+        self.a=a
+        self.d=d
+        print("parent class=",a,d)
+        
+class sub(base):
+    def __init__(self,num):
+        super().__init__(30,40)
+        self.num=num
+       # self.num=num2
+        
+        print("sub class=",num)
+        
+t1=sub(10)
+
+
+    
+            
+
+
+        
+
+        

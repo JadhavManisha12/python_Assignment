@@ -1,0 +1,239 @@
+1) create a list, accept 5 numbers , store them in the list and finally convert that list to numpy array.
+
+mylist=[]
+
+for i in range(0,5):
+    n=int(input("Enter a number "))
+    mylist.append(n)
+    
+print("list",mylist)
+
+import numpy as np
+arr=np.array(mylist)
+print("array using numpy",arr)
+
+
+2) create numpy array of 5 numbers and print their sum
+
+from numpy import * 
+arr=array([1,3,4,6,2])
+print("print array",arr)
+arr1=sum(arr)
+print("sum of array",arr1)
+
+
+3) create numpy double dimension array of 3*3 to store your initial and display them in a tabular form.
+
+import numpy as np
+
+#first=np.arange(9)
+first=np.random.randint(10,50,9)
+print(first)
+
+new=first.reshape(3,3)
+print(new)
+
+
+4) create one-d numpy array of 12 elements , accept 12 numbers and display them. Now convert this one-d array into (4*3) two-d array and display it in a tabular
+
+
+import numpy as np
+mylist=[]
+
+for i in range(0,12):
+    n=int(input("Enter a element"))
+    mylist.append(n)
+    
+print(mylist)
+
+print("convert list into 1D")
+arr=np.array(mylist)
+
+print("convert 1D to 2D array")
+arr1=arr.reshape(4,3)
+print(arr1)
+
+
+5) create two double dimension array and arrange (stack) them using "axis=0" "axis=1" and  "axis=2".
+
+import numpy as np
+
+arr=np.arange(6)
+print(arr)
+arr1=arr.reshape(2,3)
+print(arr1)
+print("*********")
+arr3=np.stack(arr1,axis=0)
+print(arr3)
+print("********")
+arr2=np.stack(arr1,axis=1)
+print(arr2)
+print("*******")
+arr3=np.stack(arr1,axis=1)
+print(arr3)
+
+
+12:->now using array slicing concept display following values
+# 	a) display   50  60  70  80
+# 	b) display 100 and 110
+# 	c) display 30 70 and 110
+# 	d) display 50  60  90 and 100
+import numpy as np
+
+arr=np.array([[10,20,30,40],[50,60,70,80],[90,100,110,120]])
+print(arr)
+t=arr.reshape(4,3)
+print(t)
+print("*****")
+print(t[1:3,1:3])
+print(t[3,0:2])
+
+print("****")
+print(t[0:4:3, 2])
+
+
+
+
+6) create two one-d arrays and then find out:
+a) common elements of both the array
+b) unique elements of first array
+c) unique elements of second array
+
+import numpy as np
+first=np.array([10,20,30,1,2,2])
+second=np.array([10,20,3,4])
+third=np.intersect1d(first,second)
+print("both array common elements",third)
+
+uni1=np.unique(first)
+print(uni1)
+
+uni2=np.unique(second)
+print(uni2)
+
+
+
+
+
+
+8) declare two 2d arrays and calculate the sum as per "axis=0" "axis=1" and "axis=2"
+
+import numpy as np
+arr=np.array([[4,3,5],[3,2,4]])
+arr1=np.array([[4,3,5],[3,2,4]])
+t=np.array([arr,arr1])
+print(t)
+t1=np.sum((arr,arr1),axis=0)
+print(t1)
+print("**********")
+
+
+t2=np.sum((arr,arr1),axis=1)
+print(t2)
+print("**********")
+
+t3=np.sum((arr,arr1),axis=2)
+print(t3)
+print("**********")
+
+
+9) create two-d array ,display it.Now accept a number from user and perform all arithmetic operations on each and every element of the array using that number.
+
+
+import numpy as np
+arr=np.array([[1,2,3],[4,1,2],[1,2,4]])
+print(arr)
+
+n=float(input("Enter any number "))
+
+add=arr+n
+print("addition",add)
+print("\n")
+
+sub=arr-n
+print("sub",sub)
+print("\n")
+
+mul=arr*n
+print("mul",mul)
+print("\n")
+
+div=arr/n
+print("div",div)
+
+
+10) accept start, end and how many numbers to 
+be generated and then using "linspace" create numpy array.
+
+import numpy as np
+
+start=int(input("Enter start number"))
+end=int(input("Enter end number"))
+n=int(input("Enter how many elements you want to genrate"))
+
+arr=np.linspace(start,end,n)
+print(arr)
+
+11) create one-d array of 8 numbers and then using "slicing" concept,
+	a) print numbers from 1 to 4
+	b) print all the numbers from 3rd position
+	c) print last 3 numbers
+
+
+12:-> accept no.of rows and no. of cols from the user , create two-d array accordingly. Now calculate the sum as per "axis=0" and "axis=1"
+import numpy as np
+arr=np.array([1,2,3,5,6,74,3,2])
+print("print original array",arr)
+print(arr[1:4])
+print(arr[3:])
+print(arr[-1:-4:-1])
+
+
+7:->
+
+import numpy as np
+
+print("ENter number of rows")
+row1=int(input())
+
+print("ENter number of col")
+col=int(input())
+
+arr1=np.empty((row1,col),dtype=int)
+for i in range(row1):
+    for j in range(col):
+        arr1[i][j]=int(input("enter values:"))
+print(arr1)
+
+print("enter rows")
+row2=int(input())
+
+print("enter col")
+col2=int(input())
+
+arr2=np.empty((row2,col2),dtype=int)
+
+for i in range(row2):
+    for j in range(col2):
+        arr2[i][j]=int(input("enter valuees"))
+        
+print(arr2)
+
+print("************")
+first=np.sum((arr1,arr2),axis=0)
+print(first)
+
+print("************")
+second=np.sum((arr1,arr2),axis=1)
+print(second)
+
+
+
+
+
+
+
+
+
+ 
+
